@@ -13,6 +13,10 @@ def isPalindrome(string):
     # return no
     pass
 
+#isPalindrome(makestring(999*range(999 to 1)))
+# for i in range 999 to 1
+# if isPalindrome(999*i):
+#    print(999*i)
 
 
 
