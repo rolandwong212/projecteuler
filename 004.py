@@ -15,9 +15,8 @@ def isPalindrome(string):
         return True
     # is first char same as last? -- strip first, last, call isPalindrome on
     # stripped string
-    elif string[0] == string[-1]:
-        isPalindrome(string[1:len(string)-1])
-        return True
+    elif string[0] is string[-1]:
+        return isPalindrome(string[1:len(string)-1])
     # otherwise return no
     else:
         return False
@@ -27,3 +26,15 @@ def isPalindrome(string):
 # if isPalindrome(999*i):
 #    print(999*i)
 
+
+for i in range(999,100,-1):
+    for j in range(999,100,-1):
+        if isPalindrome(str(i*j)) is True:
+            print(i*j,"palindrome: i",i,"j",j)
+    #print(i,"is",999*i)
+    # print("string version: ",str(999*i))
+    #if isPalindrome(str(999*i)) is True:
+    #    print(i, "is the factor of a palindrome,", 999*i)
+
+
+    
