@@ -41,7 +41,7 @@ def main(*args):
     # instring = input('number: ')
     # print(sumIntegers(int(instring)))
     # print(len(factors(int(instring))))
-    i = 100000000
+    i = 1
     while len(factors(i)) < 500:
         print(i,len(factors(i)))
         i += 1
