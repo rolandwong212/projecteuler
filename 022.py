@@ -18,7 +18,7 @@ filename = input('enter source file for names: ')
 with open(filename) as source:
     read_lines = sorted(source.readlines())
 
-namescores = []
+
 
 def scoreString(s):
     """returns int of score of s"""
@@ -30,14 +30,15 @@ def scoreString(s):
         total += (ord(newstring[i]) - 64)
     print(total)
     return total
-    
-for i in range(len(read_lines)):
-    #print(i)
-    #print(read_lines[i])
-    #print(scoreString(read_lines[i]))
-    namescores.append(scoreString(read_lines[i]) * (i + 1))
-        
 
+#namescores = []
+#
+#for i in range(len(read_lines)):
+#    namescores.append(scoreString(read_lines[i]) * (i + 1))
+        
+# try it with a list comprehension
+
+namescores = [(scoreString(read_lines[i]) * (i + 1)) for i in range(len(read_lines))]
 
 print(sum(namescores))
 
