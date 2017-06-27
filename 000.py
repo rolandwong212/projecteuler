@@ -1,14 +1,14 @@
-# time for calculation of execution time
+# used to measure execution time
 import time
 
-# time at the start of program execution
+# save start of execution
 start_execution = time.time()
 
 # code goes here
 
 
-# time at the end of execution
+# save end of execution
 end_execution = time.time()
 
-# printing the total time taken
+# print execution duration
 print end_execution - start_execution
