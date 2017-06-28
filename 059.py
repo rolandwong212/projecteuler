@@ -29,6 +29,7 @@
 
 import itertools # needed for permutations and cycle methods
 import string
+import sys
 
 # list comprehension of three char permutations of lowercase
 enc_key_space = [x for x in itertools.permutations(string.ascii_lowercase,3)]
@@ -47,7 +48,45 @@ def decrypt(k,c):
     Assumes k is a three lowercase character string, and c is the ciphertext.
     the function will XOR each successive character from k with each character
     from c, then cycle k."""
-    return [(itertools.cycle(k) ^ c[i]) for i in range(len(c)) if c[i] in string.ascii_lowercase]
+    zipped = list(zip(itertools.cycle(k),c))
+    return [((ord(zipped[i][0])) ^ int(zipped[i][1])) for i in range(len(zipped))]
 
-for i in range(len(enc_key_space)):
-    print(decrypt(enc_key_space[i],ciphertext))
+#cleartext = [(decrypt(enc_key_space[i],ciphertext.split(','))) for i in range(len(enc_key_space))]
+
+
+
+
+# for i in range(len(cleartext)):
+#     sys.stdout.write(chr(cleartext[i]))
+# 
+# sys.stdout.flush
+# 
+
+
+
+# for i in range(len(enc_key_space)):
+#     print()
+#     print(enc_key_space[i])
+#     for j in range(len(cleartext[i])):
+#         sys.stdout.write(chr(cleartext[i][j]))
+#     sys.stdout.flush
+
+
+def main(*args):
+    """calls other functions"""
+    for i in range(len(enc_key_space)):
+        testkey = [ enc_key_space[i][j] for j in range(len(enc_key_space[i])) ]
+        print()
+        print(testkey)
+        cleartext = decrypt(testkey,ciphertext.split(','))
+        for k in range(len(cleartext)):
+            sys.stdout.write(chr(cleartext[k]))
+        sys.stdout.flush
+    return
+
+
+#main()
+
+cleartext = decrypt(["g","o","d"],ciphertext.split(','))
+
+print(sum(cleartext))
