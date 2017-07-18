@@ -10,9 +10,9 @@ import sys
 # casts to type int, assigns value to t
 t = int(input().strip())
 
-# these lines use index a0 over t lines and assigns each line to n after casting
+# these lines use index i over t lines and assigns each line to n after casting
 # to type int
-for a0 in range(t):
+for i in range(t):
     n = int(input().strip())
 
 # end text input via stdin
