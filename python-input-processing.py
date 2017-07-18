@@ -22,7 +22,9 @@ for i in range(t):
 # begin text input via file
 filename = input('enter source file: ')
 
-# these two open "filename", assigns contents to "ciphertext" as a list of lists
-# each line is a list element, and each line is itself a list
+# these two open "filename", assigns contents to "ciphertext" as a string
 with open(filename) as source:
     ciphertext = source.read()
+# source.readline() gets a single line from the file
+# If you want to read all the lines of a file in a list you can also use
+# list(f) or f.readlines()
